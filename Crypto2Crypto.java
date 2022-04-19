@@ -1,18 +1,23 @@
+import javax.swing.JOptionPane;
+
 public class Crypto2Crypto extends javax.swing.JFrame {
 
     public Crypto2Crypto() {
         initComponents();
     }
+
+    double input = 0;
+    double result = 0;
     // ****************************Netbeans*************************************
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    private void initComponents() {
+    public void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
-        jComboBox2 = new javax.swing.JComboBox<>();
-        jTextField1 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        convertFrom = new javax.swing.JComboBox<>();
+        convertTo = new javax.swing.JComboBox<>();
+        txtFrom = new javax.swing.JTextField();
+        convertBtn = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -21,13 +26,13 @@ public class Crypto2Crypto extends javax.swing.JFrame {
         jSeparator3 = new javax.swing.JSeparator();
         jPanel2 = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        logoutBtn = new javax.swing.JButton();
+        currencyConverterBTN = new javax.swing.JButton();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
-        jButton4 = new javax.swing.JButton();
+        crpyto2USDbtn = new javax.swing.JButton();
         jLabel9 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
+        txtTo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -38,28 +43,33 @@ public class Crypto2Crypto extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(207, 207, 229));
         jLabel1.setText("Crypto Converter");
 
-        jComboBox1.setBackground(new java.awt.Color(0, 11, 22));
-        jComboBox1.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
-        jComboBox1.setForeground(new java.awt.Color(255, 255, 255));
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " Bitcoin", " Ethereum", " Litecoin", " Cardano", " Binance Coin" }));
-        jComboBox1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        convertFrom.setBackground(new java.awt.Color(0, 11, 22));
+        convertFrom.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        convertFrom.setForeground(new java.awt.Color(255, 255, 255));
+        convertFrom.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Bitcoin", "Ethereum", "LiteCoin", "Cardano", "Binance Coin" }));
+        convertFrom.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        jComboBox2.setBackground(new java.awt.Color(0, 11, 22));
-        jComboBox2.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
-        jComboBox2.setForeground(new java.awt.Color(255, 255, 255));
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " Bitcoin", " Ethereum", " Litecoin", " Cardano", " Binance Coin" }));
-        jComboBox2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        convertTo.setBackground(new java.awt.Color(0, 11, 22));
+        convertTo.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        convertTo.setForeground(new java.awt.Color(255, 255, 255));
+        convertTo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Bitcoin", "Ethereum", "LiteCoin", "Cardano", "Binance Coin" }));
+        convertTo.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        jTextField1.setBackground(new java.awt.Color(0, 11, 22));
-        jTextField1.setForeground(new java.awt.Color(255, 255, 255));
-        jTextField1.setBorder(null);
-        jTextField1.setCaretColor(new java.awt.Color(255, 255, 255));
+        txtFrom.setBackground(new java.awt.Color(0, 11, 22));
+        txtFrom.setForeground(new java.awt.Color(255, 255, 255));
+        txtFrom.setBorder(null);
+        txtFrom.setCaretColor(new java.awt.Color(255, 255, 255));
 
-        jButton1.setBackground(new java.awt.Color(19, 30, 53));
-        jButton1.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("Convert");
-        jButton1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
+        convertBtn.setBackground(new java.awt.Color(19, 30, 53));
+        convertBtn.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        convertBtn.setForeground(new java.awt.Color(255, 255, 255));
+        convertBtn.setText("Convert");
+        convertBtn.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
+        convertBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                convertBtnActionPerformed(evt);
+            }
+        });
 
         jLabel2.setBackground(new java.awt.Color(255, 255, 255));
         jLabel2.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
@@ -106,25 +116,25 @@ public class Crypto2Crypto extends javax.swing.JFrame {
             }
         });
 
-        jButton2.setBackground(new java.awt.Color(19, 30, 53));
-        jButton2.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(255, 255, 255));
-        jButton2.setText("Logout");
-        jButton2.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        logoutBtn.setBackground(new java.awt.Color(19, 30, 53));
+        logoutBtn.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        logoutBtn.setForeground(new java.awt.Color(255, 255, 255));
+        logoutBtn.setText("Logout");
+        logoutBtn.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
+        logoutBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                logoutBtnActionPerformed(evt);
             }
         });
 
-        jButton3.setBackground(new java.awt.Color(19, 30, 53));
-        jButton3.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
-        jButton3.setForeground(new java.awt.Color(255, 255, 255));
-        jButton3.setText("Currency Converter");
-        jButton3.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
-        jButton3.addMouseListener(new java.awt.event.MouseAdapter() {
+        currencyConverterBTN.setBackground(new java.awt.Color(19, 30, 53));
+        currencyConverterBTN.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        currencyConverterBTN.setForeground(new java.awt.Color(255, 255, 255));
+        currencyConverterBTN.setText("Currency Converter");
+        currencyConverterBTN.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
+        currencyConverterBTN.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton3MouseClicked(evt);
+                currencyConverterBTNMouseClicked(evt);
             }
         });
 
@@ -138,14 +148,14 @@ public class Crypto2Crypto extends javax.swing.JFrame {
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setText("Wallet Balance:");
 
-        jButton4.setBackground(new java.awt.Color(19, 30, 53));
-        jButton4.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
-        jButton4.setForeground(new java.awt.Color(255, 255, 255));
-        jButton4.setText("Crypto to USD");
-        jButton4.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
-        jButton4.addMouseListener(new java.awt.event.MouseAdapter() {
+        crpyto2USDbtn.setBackground(new java.awt.Color(19, 30, 53));
+        crpyto2USDbtn.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        crpyto2USDbtn.setForeground(new java.awt.Color(255, 255, 255));
+        crpyto2USDbtn.setText("Crypto to USD");
+        crpyto2USDbtn.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
+        crpyto2USDbtn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton4MouseClicked(evt);
+                crpyto2USDbtnMouseClicked(evt);
             }
         });
 
@@ -154,7 +164,7 @@ public class Crypto2Crypto extends javax.swing.JFrame {
         jLabel9.setText(" $108.97");
         jLabel9.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(19, 30, 53)));
 
-        jLabel10.setText(" ");
+        txtTo.setText(" ");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -179,33 +189,33 @@ public class Crypto2Crypto extends javax.swing.JFrame {
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jLabel8)
-                                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(currencyConverterBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 100, Short.MAX_VALUE)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jTextField1)
+                                    .addComponent(txtFrom)
                                     .addComponent(jLabel2)
-                                    .addComponent(jComboBox1, 0, 150, Short.MAX_VALUE)
+                                    .addComponent(convertFrom, 0, 150, Short.MAX_VALUE)
                                     .addComponent(jSeparator2)
                                     .addComponent(jLabel4)))
-                            .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(logoutBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(34, 34, 34)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel3)
-                                    .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(convertTo, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(0, 0, Short.MAX_VALUE))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(jLabel5)
                                     .addComponent(jSeparator3)
-                                    .addComponent(jButton1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, 151, Short.MAX_VALUE))))
+                                    .addComponent(convertBtn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtTo, javax.swing.GroupLayout.DEFAULT_SIZE, 151, Short.MAX_VALUE))))
                         .addGap(52, 52, 52))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(crpyto2USDbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel7))
                         .addGap(0, 0, Short.MAX_VALUE))))
         );
@@ -226,33 +236,33 @@ public class Crypto2Crypto extends javax.swing.JFrame {
                     .addComponent(jLabel2))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(convertFrom, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(convertTo, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel8))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(58, 58, 58)
-                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(currencyConverterBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(crpyto2USDbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel5)
                             .addComponent(jLabel4))
                         .addGap(28, 28, 28)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(txtFrom, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtTo, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(75, 75, 75)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(convertBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(logoutBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(45, 45, 45))
         );
 
@@ -277,23 +287,193 @@ public class Crypto2Crypto extends javax.swing.JFrame {
         System.exit(0);
     }//GEN-LAST:event_jLabel6MouseClicked
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void logoutBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutBtnActionPerformed
         Login2 jf2 = new Login2();
         jf2.show();
         dispose();
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_logoutBtnActionPerformed
 
-    private void jButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseClicked
+    private void currencyConverterBTNMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_currencyConverterBTNMouseClicked
         CurrencyConverter jf2 = new CurrencyConverter();
         jf2.show();
         dispose();
-    }//GEN-LAST:event_jButton3MouseClicked
+    }//GEN-LAST:event_currencyConverterBTNMouseClicked
 
-    private void jButton4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton4MouseClicked
+    private void crpyto2USDbtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_crpyto2USDbtnMouseClicked
         Crypto2Usd jf2 = new Crypto2Usd();
         jf2.show();
         dispose();
-    }//GEN-LAST:event_jButton4MouseClicked
+    }//GEN-LAST:event_crpyto2USDbtnMouseClicked
+
+    private void convertBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_convertBtnActionPerformed
+        input = Double.parseDouble(txtFrom.getText());
+
+        if(evt.getSource()==convertBtn)
+        {
+            if(convertFrom.getSelectedItem()=="Bitcoin")
+            {
+                BTCConvert();                
+            }
+            else if(convertFrom.getSelectedItem()=="Ethereum")
+            {
+                ETHConvert();
+            }
+            else if(convertFrom.getSelectedItem()=="LiteCoin")
+            {
+                LTCConvert();
+            }
+            else if(convertFrom.getSelectedItem()=="Cardano")
+            {
+                ADAConvert();
+            }
+            else
+            {
+                BNBConvert();
+            }
+        }
+    }//GEN-LAST:event_convertBtnActionPerformed
+
+
+    //Conversion Stuff
+    public void BTCConvert() {
+        if(convertTo.getSelectedItem()=="Bitcoin")
+        {
+            result = (input);
+            txtTo.setText(""+result);
+        }
+        else if(convertTo.getSelectedItem()=="Ethereum")
+        {
+            result = (input * 14.22);
+            txtTo.setText(""+result);
+        }
+        else if(convertTo.getSelectedItem()=="LiteCoin")
+        {
+            result = (input * 76.7);
+            txtTo.setText(""+result);
+        }
+        else if(convertTo.getSelectedItem()=="Cardano")
+        {
+            result = (input * 40067.79);
+            txtTo.setText(""+result);
+        }
+        else
+        {
+            result = (input * 109.09);
+            txtTo.setText(""+result);
+        }
+    }
+
+    public void ETHConvert() {
+        if(convertTo.getSelectedItem()=="Bitcoin")
+        {
+            result = (input * 0.070);
+            txtTo.setText(""+result);
+        }
+        else if(convertTo.getSelectedItem()=="Ethereum")
+        {
+            result = (input);
+            txtTo.setText(""+result);
+        }
+        else if(convertTo.getSelectedItem()=="LiteCoin")
+        {
+            result = (input * 25.34);
+            txtTo.setText(""+result);
+        }
+        else if(convertTo.getSelectedItem()=="Cardano")
+        {
+            result = (input * 2818);
+            txtTo.setText(""+result);
+        }
+        else
+        {
+            result = (input * 7.68);
+            txtTo.setText(""+result);
+        }
+    }
+
+    public void LTCConvert() {
+        if(convertTo.getSelectedItem()=="Bitcoin")
+        {
+            result = (input * 0.0028);
+            txtTo.setText(""+result);
+        }
+        else if(convertTo.getSelectedItem()=="Ethereum")
+        {
+            result = (input * 0.04);
+            txtTo.setText(""+result);
+        }
+        else if(convertTo.getSelectedItem()=="LiteCoin")
+        {
+            result = (input);
+            txtTo.setText(""+result);
+        }
+        else if(convertTo.getSelectedItem()=="Cardano")
+        {
+            result = (input * 110.84);
+            txtTo.setText(""+result);
+        }
+        else
+        {
+            result = (input * 0.301937);
+            txtTo.setText(""+result);
+        }
+    }
+
+    public void ADAConvert() {
+        if(convertTo.getSelectedItem()=="Bitcoin")
+        {
+            result = (input * 0.0000025);
+            txtTo.setText(""+result);
+        }
+        else if(convertTo.getSelectedItem()=="Ethereum")
+        {
+            result = (input * 0.000355);
+            txtTo.setText(""+result);
+        }
+        else if(convertTo.getSelectedItem()=="LiteCoin")
+        {
+            result = (input * 0.301937);
+            txtTo.setText(""+result);
+        }
+        else if(convertTo.getSelectedItem()=="Cardano")
+        {
+            result = (input);
+            txtTo.setText(""+result);
+        }
+        else
+        {
+            result = (input * 0.002729);
+            txtTo.setText(""+result);
+        }
+    }
+
+    public void BNBConvert() {
+        if(convertTo.getSelectedItem()=="Bitcoin")
+        {
+            result = (input * 0.009162);
+            txtTo.setText(""+result);
+        }
+        else if(convertTo.getSelectedItem()=="Ethereum")
+        {
+            result = (input * 0.130174);
+            txtTo.setText(""+result);
+        }
+        else if(convertTo.getSelectedItem()=="LiteCoin")
+        {
+            result = (input * 3.30966);
+            txtTo.setText(""+result);
+        }
+        else if(convertTo.getSelectedItem()=="Cardano")
+        {
+            result = (input * 366.194908);
+            txtTo.setText(""+result);
+        }
+        else
+        {
+            result = (input);
+            txtTo.setText(""+result);
+        }
+    }
 
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -304,14 +484,12 @@ public class Crypto2Crypto extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JComboBox<String> jComboBox2;
+    private javax.swing.JButton convertBtn;
+    private javax.swing.JComboBox<String> convertFrom;
+    private javax.swing.JComboBox<String> convertTo;
+    private javax.swing.JButton crpyto2USDbtn;
+    private javax.swing.JButton currencyConverterBTN;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -324,6 +502,8 @@ public class Crypto2Crypto extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JButton logoutBtn;
+    private javax.swing.JTextField txtFrom;
+    private javax.swing.JLabel txtTo;
     // End of variables declaration//GEN-END:variables
 }
