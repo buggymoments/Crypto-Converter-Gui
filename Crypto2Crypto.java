@@ -46,13 +46,13 @@ public class Crypto2Crypto extends javax.swing.JFrame {
         convertFrom.setBackground(new java.awt.Color(0, 11, 22));
         convertFrom.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         convertFrom.setForeground(new java.awt.Color(255, 255, 255));
-        convertFrom.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Bitcoin", "Ethereum", "LiteCoin", "Cardano", "Binance Coin" }));
+        convertFrom.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " Bitcoin", " Ethereum", " LiteCoin", " Cardano", " Binance Coin" }));
         convertFrom.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         convertTo.setBackground(new java.awt.Color(0, 11, 22));
         convertTo.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         convertTo.setForeground(new java.awt.Color(255, 255, 255));
-        convertTo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Bitcoin", "Ethereum", "LiteCoin", "Cardano", "Binance Coin" }));
+        convertTo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " Bitcoin", " Ethereum", " LiteCoin", " Cardano", " Binance Coin" }));
         convertTo.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         txtFrom.setBackground(new java.awt.Color(0, 11, 22));
@@ -165,6 +165,7 @@ public class Crypto2Crypto extends javax.swing.JFrame {
         jLabel9.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(19, 30, 53)));
 
         txtTo.setText(" ");
+        txtTo.setForeground(new java.awt.Color(255, 255, 255));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -310,19 +311,19 @@ public class Crypto2Crypto extends javax.swing.JFrame {
 
         if(evt.getSource()==convertBtn)
         {
-            if(convertFrom.getSelectedItem()=="Bitcoin")
+            if(convertFrom.getSelectedItem()==" Bitcoin")
             {
                 BTCConvert();                
             }
-            else if(convertFrom.getSelectedItem()=="Ethereum")
+            else if(convertFrom.getSelectedItem()==" Ethereum")
             {
                 ETHConvert();
             }
-            else if(convertFrom.getSelectedItem()=="LiteCoin")
+            else if(convertFrom.getSelectedItem()==" LiteCoin")
             {
                 LTCConvert();
             }
-            else if(convertFrom.getSelectedItem()=="Cardano")
+            else if(convertFrom.getSelectedItem()==" Cardano")
             {
                 ADAConvert();
             }
@@ -336,22 +337,22 @@ public class Crypto2Crypto extends javax.swing.JFrame {
 
     //Conversion Stuff
     public void BTCConvert() {
-        if(convertTo.getSelectedItem()=="Bitcoin")
+        if(convertTo.getSelectedItem()==" Bitcoin")
         {
             result = (input);
             txtTo.setText(""+result);
         }
-        else if(convertTo.getSelectedItem()=="Ethereum")
+        else if(convertTo.getSelectedItem()==" Ethereum")
         {
             result = (input * 14.22);
             txtTo.setText(""+result);
         }
-        else if(convertTo.getSelectedItem()=="LiteCoin")
+        else if(convertTo.getSelectedItem()==" LiteCoin")
         {
             result = (input * 76.7);
             txtTo.setText(""+result);
         }
-        else if(convertTo.getSelectedItem()=="Cardano")
+        else if(convertTo.getSelectedItem()==" Cardano")
         {
             result = (input * 40067.79);
             txtTo.setText(""+result);
@@ -364,22 +365,22 @@ public class Crypto2Crypto extends javax.swing.JFrame {
     }
 
     public void ETHConvert() {
-        if(convertTo.getSelectedItem()=="Bitcoin")
+        if(convertTo.getSelectedItem()==" Bitcoin")
         {
             result = (input * 0.070);
             txtTo.setText(""+result);
         }
-        else if(convertTo.getSelectedItem()=="Ethereum")
+        else if(convertTo.getSelectedItem()==" Ethereum")
         {
             result = (input);
             txtTo.setText(""+result);
         }
-        else if(convertTo.getSelectedItem()=="LiteCoin")
+        else if(convertTo.getSelectedItem()==" LiteCoin")
         {
             result = (input * 25.34);
             txtTo.setText(""+result);
         }
-        else if(convertTo.getSelectedItem()=="Cardano")
+        else if(convertTo.getSelectedItem()==" Cardano")
         {
             result = (input * 2818);
             txtTo.setText(""+result);
@@ -392,22 +393,22 @@ public class Crypto2Crypto extends javax.swing.JFrame {
     }
 
     public void LTCConvert() {
-        if(convertTo.getSelectedItem()=="Bitcoin")
+        if(convertTo.getSelectedItem()==" Bitcoin")
         {
             result = (input * 0.0028);
             txtTo.setText(""+result);
         }
-        else if(convertTo.getSelectedItem()=="Ethereum")
+        else if(convertTo.getSelectedItem()==" Ethereum")
         {
             result = (input * 0.04);
             txtTo.setText(""+result);
         }
-        else if(convertTo.getSelectedItem()=="LiteCoin")
+        else if(convertTo.getSelectedItem()==" LiteCoin")
         {
             result = (input);
             txtTo.setText(""+result);
         }
-        else if(convertTo.getSelectedItem()=="Cardano")
+        else if(convertTo.getSelectedItem()==" Cardano")
         {
             result = (input * 110.84);
             txtTo.setText(""+result);
@@ -420,22 +421,22 @@ public class Crypto2Crypto extends javax.swing.JFrame {
     }
 
     public void ADAConvert() {
-        if(convertTo.getSelectedItem()=="Bitcoin")
+        if(convertTo.getSelectedItem()==" Bitcoin")
         {
             result = (input * 0.0000025);
             txtTo.setText(""+result);
         }
-        else if(convertTo.getSelectedItem()=="Ethereum")
+        else if(convertTo.getSelectedItem()==" Ethereum")
         {
             result = (input * 0.000355);
             txtTo.setText(""+result);
         }
-        else if(convertTo.getSelectedItem()=="LiteCoin")
+        else if(convertTo.getSelectedItem()==" LiteCoin")
         {
             result = (input * 0.301937);
             txtTo.setText(""+result);
         }
-        else if(convertTo.getSelectedItem()=="Cardano")
+        else if(convertTo.getSelectedItem()==" Cardano")
         {
             result = (input);
             txtTo.setText(""+result);
@@ -448,22 +449,22 @@ public class Crypto2Crypto extends javax.swing.JFrame {
     }
 
     public void BNBConvert() {
-        if(convertTo.getSelectedItem()=="Bitcoin")
+        if(convertTo.getSelectedItem()==" Bitcoin")
         {
             result = (input * 0.009162);
             txtTo.setText(""+result);
         }
-        else if(convertTo.getSelectedItem()=="Ethereum")
+        else if(convertTo.getSelectedItem()==" Ethereum")
         {
             result = (input * 0.130174);
             txtTo.setText(""+result);
         }
-        else if(convertTo.getSelectedItem()=="LiteCoin")
+        else if(convertTo.getSelectedItem()==" LiteCoin")
         {
             result = (input * 3.30966);
             txtTo.setText(""+result);
         }
-        else if(convertTo.getSelectedItem()=="Cardano")
+        else if(convertTo.getSelectedItem()==" Cardano")
         {
             result = (input * 366.194908);
             txtTo.setText(""+result);
