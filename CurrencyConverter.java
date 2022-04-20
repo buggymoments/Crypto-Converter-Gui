@@ -39,7 +39,7 @@ public class CurrencyConverter extends javax.swing.JFrame {
         jComboBox1.setBackground(new java.awt.Color(0, 11, 22));
         jComboBox1.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         jComboBox1.setForeground(new java.awt.Color(255, 255, 255));
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " Lagyan nyo d2" }));
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "USD","PHP","GBP","EUR","CAD" }));
         jComboBox1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jComboBox1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -50,7 +50,7 @@ public class CurrencyConverter extends javax.swing.JFrame {
         jComboBox2.setBackground(new java.awt.Color(0, 11, 22));
         jComboBox2.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         jComboBox2.setForeground(new java.awt.Color(255, 255, 255));
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " USD" }));
+        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "USD","PHP","GBP","EUR","CAD" }));
         jComboBox2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         jTextField1.setBackground(new java.awt.Color(0, 11, 22));
@@ -256,6 +256,137 @@ public class CurrencyConverter extends javax.swing.JFrame {
         jf2.show();
         dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
+    
+        private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {                                         
+        Double outpt;
+        Double inpt = Double.parseDouble(jTextField1.getText());
+        
+        if(jComboBox1.getSelectedItem().toString() == "USD" && jComboBox2.getSelectedItem().toString() == "USD")
+        {
+            outpt = inpt * 1;
+            jLabel10.setText(""+outpt);
+        }
+        else if(jComboBox1.getSelectedItem().toString() == "USD" && jComboBox2.getSelectedItem().toString() == "PHP")
+        {
+            outpt = inpt * 51;
+            jLabel10.setText(""+outpt);
+        }
+        else if(jComboBox1.getSelectedItem().toString() == "USD" && jComboBox2.getSelectedItem().toString() == "GBP")
+        {
+            outpt = inpt * 0.77;
+            jLabel10.setText(""+outpt);
+        }
+        else if(jComboBox1.getSelectedItem().toString() == "USD" && jComboBox2.getSelectedItem().toString() == "EUR")
+        {
+            outpt = inpt * 0.92;
+            jLabel10.setText(""+outpt);
+        }
+        else if(jComboBox1.getSelectedItem().toString() == "USD" && jComboBox2.getSelectedItem().toString() == "CAD")
+        {
+            outpt = inpt * 1.25;
+            jLabel10.setText(""+outpt);
+        }
+        else if(jComboBox1.getSelectedItem().toString() == "PHP" && jComboBox2.getSelectedItem().toString() == "PHP")
+        {
+            outpt = inpt * 1;
+            jLabel10.setText(""+outpt);
+        }
+        else if(jComboBox1.getSelectedItem().toString() == "PHP" && jComboBox2.getSelectedItem().toString() == "USD")
+        {
+            outpt = inpt * 0.019;
+            jLabel10.setText(""+outpt);
+        }
+        else if(jComboBox1.getSelectedItem().toString() == "PHP" && jComboBox2.getSelectedItem().toString() == "GBP")
+        {
+            outpt = inpt * 0.015;
+            jLabel10.setText(""+outpt);
+        }
+        else if(jComboBox1.getSelectedItem().toString() == "PHP" && jComboBox2.getSelectedItem().toString() == "EUR")
+        {
+            outpt = inpt * 0.018;
+            jLabel10.setText(""+outpt);
+        }
+        else if(jComboBox1.getSelectedItem().toString() == "PHP" && jComboBox2.getSelectedItem().toString() == "CAD")
+        {
+            outpt = inpt * 0.024;
+            jLabel10.setText(""+outpt);
+        }
+        else if(jComboBox1.getSelectedItem().toString() == "GBP" && jComboBox2.getSelectedItem().toString() == "GBP")
+        {
+            outpt = inpt * 1;
+            jLabel10.setText(""+outpt);
+        }
+        else if(jComboBox1.getSelectedItem().toString() == "GBP" && jComboBox2.getSelectedItem().toString() == "USD")
+        {
+            outpt = inpt * 1.31;
+            jLabel10.setText(""+outpt);
+        }
+        else if(jComboBox1.getSelectedItem().toString() == "GBP" && jComboBox2.getSelectedItem().toString() == "PHP")
+        {
+            outpt = inpt * 67.16;
+            jLabel10.setText(""+outpt);
+        }
+        else if(jComboBox1.getSelectedItem().toString() == "GBP" && jComboBox2.getSelectedItem().toString() == "EUR")
+        {
+            outpt = inpt * 1.20;
+            jLabel10.setText(""+outpt);
+        }
+        else if(jComboBox1.getSelectedItem().toString() == "GBP" && jComboBox2.getSelectedItem().toString() == "CAD")
+        {
+            outpt = inpt * 1.63;
+            jLabel10.setText(""+outpt);
+        }
+        else if(jComboBox1.getSelectedItem().toString() == "EUR" && jComboBox2.getSelectedItem().toString() == "EUR")
+        {
+            outpt = inpt * 1;
+            jLabel10.setText(""+outpt);
+        }
+        else if(jComboBox1.getSelectedItem().toString() == "EUR" && jComboBox2.getSelectedItem().toString() == "USD")
+        {
+            outpt = inpt * 1.09;
+            jLabel10.setText(""+outpt);
+        }
+        else if(jComboBox1.getSelectedItem().toString() == "EUR" && jComboBox2.getSelectedItem().toString() == "PHP")
+        {
+            outpt = inpt * 55.98;
+            jLabel10.setText(""+outpt);
+        }
+        else if(jComboBox1.getSelectedItem().toString() == "EUR" && jComboBox2.getSelectedItem().toString() == "GBP")
+        {
+            outpt = inpt * 0.83;
+            jLabel10.setText(""+outpt);
+        }   
+        else if(jComboBox1.getSelectedItem().toString() == "EUR" && jComboBox2.getSelectedItem().toString() == "CAD")
+        {
+            outpt = inpt * 1.36;
+            jLabel10.setText(""+outpt);
+        }
+        else if(jComboBox1.getSelectedItem().toString() == "CAD" && jComboBox2.getSelectedItem().toString() == "CAD")
+        {
+            outpt = inpt * 1;
+            jLabel10.setText(""+outpt);
+        }
+        else if(jComboBox1.getSelectedItem().toString() == "CAD" && jComboBox2.getSelectedItem().toString() == "USD")
+        {
+            outpt = inpt * 0.80;
+            jLabel10.setText(""+outpt);
+        }
+        else if(jComboBox1.getSelectedItem().toString() == "CAD" && jComboBox2.getSelectedItem().toString() == "PHP")
+        {
+            outpt = inpt * 41.12;
+            jLabel10.setText(""+outpt);
+        }
+        else if(jComboBox1.getSelectedItem().toString() == "CAD" && jComboBox2.getSelectedItem().toString() == "GBP")
+        {
+            outpt = inpt * 0.61;
+            jLabel10.setText(""+outpt);
+        }
+        else if(jComboBox1.getSelectedItem().toString() == "CAD" && jComboBox2.getSelectedItem().toString() == "EUR")
+        {
+            outpt = inpt * 0.73;
+            jLabel10.setText(""+outpt);
+        }        
+    } 
 
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
